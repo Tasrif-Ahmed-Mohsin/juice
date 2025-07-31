@@ -1,0 +1,94 @@
+/* Floating Fruit Background Styles & Animations for 2Go - More & Smaller Fruits */
+
+.fruity-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+}
+
+/* Base fruit style: smaller size, semi-transparent, gentle shadow */
+.fruity-bg .fruit {
+  position: absolute;
+  opacity: 0.33;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,0.07));
+  will-change: transform, opacity;
+  transition: opacity 0.6s;
+  pointer-events: none;
+  width: 48px;
+  height: auto;
+}
+
+/* Individual variants for random placement and animation */
+.fruity-bg .mango.variant1 { left: 6vw; top: 6vh; animation: fruitFloat1 12s infinite; }
+.fruity-bg .mango.variant2 { left: 72vw; top: 16vh; animation: fruitFloat2 13s infinite; }
+.fruity-bg .mango.variant3 { left: 22vw; top: 78vh; animation: fruitFloat3 10s infinite; }
+.fruity-bg .mango.variant4 { left: 41vw; top: 42vh; animation: fruitPulse 14s infinite; }
+
+.fruity-bg .pineapple.variant1 { left: 88vw; top: 10vh; animation: fruitFloat2 15s infinite; }
+.fruity-bg .pineapple.variant2 { left: 12vw; top: 92vh; animation: fruitPulse 13s infinite; }
+.fruity-bg .pineapple.variant3 { left: 56vw; top: 22vh; animation: fruitFloat1 12s infinite; }
+.fruity-bg .pineapple.variant4 { left: 81vw; top: 81vh; animation: fruitFloat4 17s infinite; }
+
+.fruity-bg .watermelon.variant1 { left: 32vw; top: 9vh; animation: fruitFloat3 15s infinite; }
+.fruity-bg .watermelon.variant2 { left: 68vw; top: 66vh; animation: fruitFloat2 12s infinite; }
+.fruity-bg .watermelon.variant3 { left: 15vw; top: 37vh; animation: fruitPulse 11s infinite; }
+.fruity-bg .watermelon.variant4 { left: 59vw; top: 92vh; animation: fruitFloat1 14s infinite; }
+
+.fruity-bg .coffee.variant1 { left: 2vw; top: 52vh; animation: fruitFloat4 18s infinite; }
+.fruity-bg .coffee.variant2 { left: 93vw; top: 48vh; animation: fruitFloat3 16s infinite; }
+.fruity-bg .coffee.variant3 { left: 44vw; top: 71vh; animation: fruitPulse 14s infinite; }
+
+.fruity-bg .citrus.variant1 { left: 29vw; top: 51vh; animation: fruitPulse 16s infinite; }
+.fruity-bg .citrus.variant2 { left: 77vw; top: 29vh; animation: fruitFloat1 12s infinite; }
+.fruity-bg .citrus.variant3 { left: 62vw; top: 58vh; animation: fruitPulse 18s infinite; }
+.fruity-bg .citrus.variant4 { left: 19vw; top: 84vh; animation: fruitFloat2 17s infinite; }
+
+/* Animations */
+@keyframes fruitFloat1 {
+  0%   { transform: translateY(0) scale(1) rotate(-2deg);}
+  50%  { transform: translateY(-18px) scale(1.12) rotate(5deg);}
+  100% { transform: translateY(0) scale(1) rotate(-2deg);}
+}
+@keyframes fruitFloat2 {
+  0%   { transform: translateY(0) scale(1) rotate(0deg);}
+  35%  { transform: translateY(-12px) scale(1.11) rotate(12deg);}
+  50%  { transform: translateY(-10px) scale(1.03) rotate(-7deg);}
+  100% { transform: translateY(0) scale(1) rotate(0deg);}
+}
+@keyframes fruitFloat3 {
+  0%   { transform: translateY(0) scale(1) rotate(0);}
+  40%  { transform: translateY(-9px) scale(1.11) rotate(9deg);}
+  70%  { transform: translateY(-7px) scale(1) rotate(-6deg);}
+  100% { transform: translateY(0) scale(1) rotate(0);}
+}
+@keyframes fruitFloat4 {
+  0%   { transform: translateY(0) scale(1);}
+  60%  { transform: translateY(-7px) scale(1.13);}
+  100% { transform: translateY(0) scale(1);}
+}
+@keyframes fruitPulse {
+  0%   { opacity: 0.28; transform: scale(1);}
+  10%  { opacity: 0.39; transform: scale(1.13);}
+  50%  { opacity: 0.32; transform: scale(1.08);}
+  90%  { opacity: 0.44; transform: scale(1.15);}
+  100% { opacity: 0.33; transform: scale(1);}
+}
+
+/* Responsive adjustments for mobile/tablet - even smaller fruits */
+@media (max-width: 700px) {
+  .fruity-bg .fruit {
+    width: 32px;
+  }
+}
+
+/* Optional: On dark mode, make fruits slightly more opaque */
+@media (prefers-color-scheme: dark) {
+  .fruity-bg .fruit {
+    opacity: 0.44;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.13));
+  }
+}

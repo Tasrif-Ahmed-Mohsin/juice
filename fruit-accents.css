@@ -1,0 +1,108 @@
+/* Fruit Accent Styles for 2Go Juice Website */
+
+.fruit-bg--hero {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* General fruit accent styles */
+.fruit-accent {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.12;
+  filter: drop-shadow(0 4px 24px rgba(60, 70, 60, 0.08));
+  transition: opacity 0.3s, transform 0.4s;
+  will-change: opacity, transform;
+  user-select: none;
+}
+
+/* HERO section accents */
+.fruit-accent--citrus-hero {
+  top: 32px; left: 24px;
+  width: 100px; height: auto;
+  opacity: 0.18;
+}
+.fruit-accent--watermelon-hero {
+  bottom: 42px; right: 24px;
+  width: 110px; height: auto;
+  opacity: 0.13;
+}
+
+/* PRODUCTS section accents */
+.fruit-accent--pineapple-products {
+  top: -40px; left: -30px;
+  width: 120px; height: auto;
+  opacity: 0.13;
+}
+
+.fruit-accent--card {
+  bottom: 12px; right: 16px;
+  width: 52px; height: auto;
+  opacity: 0.14;
+}
+.fruit-accent--pineapple { filter: drop-shadow(0 2px 6px #FFE13544); }
+.fruit-accent--watermelon { filter: drop-shadow(0 2px 6px #FF6B6B44); }
+.fruit-accent--citrus { filter: drop-shadow(0 2px 6px #CAF4F499); }
+.fruit-accent--mango { filter: drop-shadow(0 2px 6px #FFB34766); }
+
+/* ABOUT section accents */
+.fruit-accent--mango-about {
+  top: -38px; right: -24px;
+  width: 88px; height: auto;
+  opacity: 0.13;
+}
+.fruit-accent--pineapple-about {
+  bottom: -38px; left: -24px;
+  width: 88px; height: auto;
+  opacity: 0.13;
+}
+
+/* NEWSLETTER section accent */
+.fruit-accent--newsletter {
+  bottom: 18px; left: 40%;
+  width: 86px; height: auto;
+  opacity: 0.11;
+}
+
+/* FOOTER accent */
+.fruit-accent--footer {
+  top: -30px; left: 80%;
+  width: 62px; height: auto;
+  opacity: 0.13;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .fruit-accent--citrus-hero,
+  .fruit-accent--watermelon-hero,
+  .fruit-accent--pineapple-products,
+  .fruit-accent--mango-about,
+  .fruit-accent--pineapple-about,
+  .fruit-accent--newsletter,
+  .fruit-accent--footer {
+    width: 60px;
+  }
+  .fruit-accent--card { width: 34px; }
+}
+@media (max-width: 480px) {
+  .fruit-accent--citrus-hero,
+  .fruit-accent--watermelon-hero,
+  .fruit-accent--pineapple-products,
+  .fruit-accent--mango-about,
+  .fruit-accent--pineapple-about,
+  .fruit-accent--newsletter,
+  .fruit-accent--footer {
+    width: 40px;
+    left: 10px; right: auto;
+    top: 6px; bottom: auto;
+  }
+  .fruit-accent--card { width: 22px; }
+}
+
+/* Make sure images do not block clicks or overlap important content */
+.fruit-accent {
+  pointer-events: none !important;
+}
