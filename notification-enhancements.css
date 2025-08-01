@@ -1,0 +1,164 @@
+/* Enhanced Notification Styles - Frost Glass Effect
+   Add this to your existing CSS or include as a separate file */
+
+/* Notification base styles for better browser support */
+.notification {
+    /* Enhanced frost glass effect with fallbacks */
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+
+    /* Better text rendering on glass background */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+    /* Smooth animations */
+    will-change: transform, opacity;
+
+    /* Better tap targets for mobile */
+    touch-action: manipulation;
+}
+
+/* Success notification frost glass */
+.notification--success {
+    background: linear-gradient(135deg, 
+        rgba(34, 197, 94, 0.25), 
+        rgba(255, 255, 255, 0.1)) !important;
+    border: 1px solid rgba(34, 197, 94, 0.4) !important;
+}
+
+/* Error notification frost glass */
+.notification--error {
+    background: linear-gradient(135deg, 
+        rgba(239, 68, 68, 0.25), 
+        rgba(255, 255, 255, 0.1)) !important;
+    border: 1px solid rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Warning notification frost glass */
+.notification--warning {
+    background: linear-gradient(135deg, 
+        rgba(245, 158, 11, 0.25), 
+        rgba(255, 255, 255, 0.1)) !important;
+    border: 1px solid rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Info notification frost glass */
+.notification--info {
+    background: linear-gradient(135deg, 
+        rgba(59, 130, 246, 0.25), 
+        rgba(255, 255, 255, 0.1)) !important;
+    border: 1px solid rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Mobile-specific notification adjustments */
+@media (max-width: 480px) {
+    .notification {
+        /* Full width on mobile with margins */
+        left: 8px !important;
+        right: 8px !important;
+        max-width: none !important;
+        min-width: none !important;
+
+        /* Reduced padding for mobile */
+        padding: 0.6rem 0.8rem !important;
+
+        /* Smaller font size */
+        font-size: 0.8rem !important;
+
+        /* Adjusted position */
+        top: 85px !important;
+
+        /* Enhanced backdrop blur for smaller screens */
+        backdrop-filter: blur(16px) saturate(170%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(170%) !important;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .notification {
+        padding: 0.5rem 0.7rem !important;
+        font-size: 0.75rem !important;
+        top: 80px !important;
+    }
+}
+
+/* High DPI displays - enhanced frost effect */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .notification {
+        backdrop-filter: blur(22px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(22px) saturate(190%) !important;
+    }
+}
+
+/* Dark mode support for notifications */
+@media (prefers-color-scheme: dark) {
+    .notification {
+        color: #f9fafb !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .notification--success {
+        background: linear-gradient(135deg, 
+            rgba(34, 197, 94, 0.3), 
+            rgba(0, 0, 0, 0.1)) !important;
+    }
+
+    .notification--error {
+        background: linear-gradient(135deg, 
+            rgba(239, 68, 68, 0.3), 
+            rgba(0, 0, 0, 0.1)) !important;
+    }
+
+    .notification--warning {
+        background: linear-gradient(135deg, 
+            rgba(245, 158, 11, 0.3), 
+            rgba(0, 0, 0, 0.1)) !important;
+    }
+
+    .notification--info {
+        background: linear-gradient(135deg, 
+            rgba(59, 130, 246, 0.3), 
+            rgba(0, 0, 0, 0.1)) !important;
+    }
+}
+
+/* Notification animation enhancements */
+@keyframes notificationSlideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes notificationFadeOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* Smooth scrolling when notifications appear */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure notifications don't interfere with page interactions */
+.notification {
+    pointer-events: auto;
+    user-select: none;
+}
+
+/* Close button hover effect */
+.notification button:hover {
+    opacity: 1 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px;
+}
