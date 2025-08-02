@@ -1125,7 +1125,7 @@ p {
   overflow: hidden;
   padding-top: var(--header-height);
   background:
-    url('wallpaperhero1.png') center/cover no-repeat;
+   /* url('wallpaperhero100.png') center/cover no-repeat;*/
 }
 
 .hero__container {
